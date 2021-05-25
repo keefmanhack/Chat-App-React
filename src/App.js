@@ -1,11 +1,29 @@
 import React from 'react';
-import 'rsuite/lib/styles/index.less';
+import { Switch} from 'react-router';
+import 'rsuite/dist/styles/rsuite-default.css';
+import PrivateRoute from './Components/PrivateRoute';
+import PublicRoute from './Components/PublicRoute';
+import SignIn from './Pages/SignIn';
+import Home from './Pages/Home';
+import './styles/main.scss';
+import './styles/override.scss';
+import './styles/utility.scss';
+import './styles/utility_colors.scss';
+import { ProfileProvider } from './Context/profile.context';
+
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <ProfileProvider>
+      <Switch>
+        <PublicRoute path='/signin'>
+          <SignIn/>
+        </PublicRoute>
+        <PrivateRoute path='/'>
+          <Home/>
+        </PrivateRoute>
+      </Switch>
+    </ProfileProvider>
   );
 }
 
