@@ -9,7 +9,6 @@ const ProviderBlock = () => {
         'facebook.com': auth.currentUser.providerData.some(data => data.providerId === 'facebook.com')
     })
 
-    console.log(isConnected);
 
     const updateIsConnected = (providerID, value) => {
         setIsConnected( p => ({

@@ -4,12 +4,12 @@ import 'rsuite/dist/styles/rsuite-default.css';
 import PrivateRoute from './Components/PrivateRoute';
 import PublicRoute from './Components/PublicRoute';
 import SignIn from './Pages/SignIn';
-import Home from './Pages/Home';
 import './styles/main.scss';
 import './styles/override.scss';
 import './styles/utility.scss';
 import './styles/utility_colors.scss';
 import { ProfileProvider } from './Context/profile.context';
+import Home from './Pages/Home/Index';
 
 
 function App() {

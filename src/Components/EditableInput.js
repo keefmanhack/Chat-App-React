@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, {useState } from 'react'
 import { Alert, Icon, Input, InputGroup } from 'rsuite'
 
 const EditableInput = ({
@@ -14,14 +14,14 @@ const EditableInput = ({
     const [input, setInput] = useState(initialValue);
     const [isEditable, setIsEditable] = useState(false);
 
-    const onInputChange = useCallback((value) => {
+    const onInputChange = (value) => {
         setInput(value);
-    }, [initialValue])
+    }
 
-    const onEditClick = useCallback(() => {
+    const onEditClick = () => {
         setIsEditable(p => !p);
         setInput(initialValue);
-    })
+    }
 
     const onSaveClick = async () => {
         const trimmed = input.trim();
